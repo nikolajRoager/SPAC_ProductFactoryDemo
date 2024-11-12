@@ -30,18 +30,7 @@ class Program
         //As a demonstration, make a list of factories for different products based on inputs
 
         //Pass the list of factories to a printing function, we could also pass it to any other function or class, all that function needs to do is depend on the IFactory and IAmmunition
-        print(factories);
-    }
-    
-    //A function which prints some products, these products are returned with a factory class, as such, all we need to do to change what gets printed, is to change the factories
-    public static void print(IEnumerable<IWeaponFactory> factoryList)
-    {
-        foreach (IWeaponFactory factory in factoryList)
-        {
-            var Weapon = factory.CreateAmmunition();
-
-            Console.WriteLine(Weapon);
-        }
-
+        Arsenal arsenal=new Arsenal(factories);
+        arsenal.Print();
     }
 }
